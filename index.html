@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> HTML5 - ali omar </title>
+    <meta name="view port"content="width=device-width,initial-scale=1.0">
+
+   <style>
+    /* 1. السنتر بتاع الصفحة كلها */
+    body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* يخلي المحتوى في النص بالعرض */
+    align-items: center;     /* يخلي المحتوى في النص بالطول */
+    min-height: 100vh;       /* يخلي الصفحة تاخد طول الشاشة بالكامل */
+    background-color: #fff;  /* لون الخلفية */
+    font-family: sans-serif;
+}
+
+.login-container {
+    width: 90%;              /* عشان الحواف ما تبقاش لازقة في الشاشة */
+    max-width: 400px;        /* أقصى عرض عشان ما يفرشش زيادة في الشاشات الكبيرة */
+    text-align: center;
+}
+
+
+    /* 2. تنسيق الفورم والصفوف */
+    form {
+        display: flex;
+        flex-direction: column; /* يخليهم تحت بعض */
+        align-items: center;    /* يوسطن العناصر جوه الفورم */
+        gap: 20px;             /* مسافة بين مجموعة التليفون والباسورد */
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: column; /* يخلي المربع وتحته الكلمة */
+        align-items: center;    /* يوسطن الكلمة تحت المربع بالظبط */
+        gap: 5px;              /* مسافة صغيرة جداً بين المربع والكلمة */
+    }
+
+    /* 3. شوية لمسات "Minimalist" للمربعات */
+    input[type="number"], input[type="password"] {
+        padding: 10px;
+        width: 250px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        text-align: center;    /* يخلي الأرقام تظهر في نص المربع */
+    }
+
+    input[type="submit"] {
+        padding: 10px 30px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #555;
+    }
+    input {
+    width: 100%;
+    padding: 15px;           /* بيزود المساحة جوه الـ input فيبان "قريب" وكبير */
+    margin: 10px 0;          /* مسافة بين كل عنصر والتاني */
+    border: 1px solid #ddd;
+    border-radius: 8px;      /* الحواف الدائرية البسيطة */
+    box-sizing: border-box;  /* عشان الـ padding ما يزودش العرض الكلي */
+    font-size: 16px;         /* مهم جداً عشان الموبايل ما يعملش Zoom تلقائي */
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;  /* نفس لون الزرار في الصورة */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+</style>
+</head>
+<body>
+    <form id="log">
+    <h1>LOG IN</h1>
+ <input type="number" name="number" id="num" placeholder="0123456789" required > 
+<label for="num" name="number" >TEL :</label>
+<input type="password" name="pass" id="pass" placeholder="*****" required > 
+<label for="pass" name="pass" >password</label>
+    <input type="submit" value="اضغط هنا">
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+    <script>
+    document.getElementById("log").onsubmit = function(event) {
+    event.preventDefault();
+
+    var phone = document.getElementById("num").value;
+    var pass = document.getElementById("pass").value;
+
+    // بياناتك اللي إنت محددها
+    var correctPhone = "01228028829"; 
+    var correctPass = "10002000##"; 
+
+    if (phone === correctPhone && pass === correctPass) {
+        // التعديل هنا: بنقول للمتصفح ادخل فولدر system وافتح index.html
+        window.location.href = "system/index.html"; 
+    } else {
+        alert("البيانات غلط يا بطل.. ركز!");
+    }
+};
+
+
+</script>
+</body>
+</html>
